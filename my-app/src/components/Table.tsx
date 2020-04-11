@@ -10,8 +10,9 @@ const Table: React.FC<Props> = ({data}) => {
         <div className="table-column">
             <div>{el.campaignName}</div>
             <div className="active-wrapper">
-                <div className="active"></div>
-                {el.status}
+                <div className="active">
+                    {el.status}
+                </div>
             </div>
             <div>{el.results[0].resultCount}
                 <div>{el.results[0].resultTitle}</div>
@@ -40,7 +41,7 @@ const Table: React.FC<Props> = ({data}) => {
                 <div>Duration</div>
                 <div>Amount Spent</div>
             </div>
-            <div>
+            <div className="table-content">
                 {tableElements}
             </div>
         </div>
