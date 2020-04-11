@@ -1,0 +1,26 @@
+
+.table {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 4px solid #282c34;
+}
+
+.table-column {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.active {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50px;
+    margin: 6px 4px;
+}
+
+.active-wrapper {
+    display: flex;
+}
