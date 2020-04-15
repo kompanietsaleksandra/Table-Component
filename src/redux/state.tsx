@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface Result {
     resultCount: number
@@ -11,269 +10,239 @@ interface Budget {
 }
 
 interface Duration {
-    startDate: string
-    endDate: string
+    startDate: any
+    endDate: any
     days: number
 }
 
-interface Table {
+interface CampaignData {
     campaignName: string;
     status: string;
-    results: Array<Result>;
+    results: Result;
     impression: number;
-    budget: Array<Budget>
-    duration: Array<Duration>;
+    budget: Budget;
+    duration: Duration;
     amountSpent: number
 }
-interface TableArray extends Array<Table>{}
+interface TableArray extends Array<CampaignData>{}
 
 
 const data: TableArray = [
     {
         campaignName: 'Campaign1',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 1,
+                resultCount: 348777,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 666,
-        budget: [
+        budget:
             {
                 budgetCount: 30,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
-                startDate: '9 11 2016',
-                endDate: '9 12 2016',
+                startDate: new Date('2016-02-02'),
+                endDate: new Date('2016-03-02'),
                 days: 30
-            }
-        ],
+            },
         amountSpent: 20
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 359756,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 398775,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 388885,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },{
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 388885,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 359999,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },{
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 356578,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 358543,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },{
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 398765,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
     {
         campaignName: 'Campaign2',
         status: 'Active',
-        results: [
+        results:
             {
-                resultCount: 35,
+                resultCount: 387655,
                 resultTitle: 'test title'
-            }
-        ],
+            },
         impression: 676,
-        budget: [
+        budget:
             {
                 budgetCount: 68,
                 budgetPeriod: 'day'
-            }
-        ],
-        duration: [
+            },
+        duration:
             {
                 startDate: '9 10 2016',
                 endDate: '9 11 2016',
                 days: 30
-            }
-        ],
+            },
         amountSpent: 220
     },
 ];
