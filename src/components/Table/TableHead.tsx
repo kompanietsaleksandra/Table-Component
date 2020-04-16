@@ -1,22 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import TableHeadRow from "./TableHeadRow";
+
 
 const TableHeader = styled.tr`
     th{
-    border-bottom: 4px solid #282c34;
+    border-bottom: 3px solid #282c34;
     padding: 30px;
+    text-align: left;
     }
 `;
 const TableHead = () => {
     return (
         <TableHeader>
-            <th>Campaign Name</th>
-            <th>Status</th>
-            <th>Results</th>
-            <th>Impression</th>
-            <th>Budget</th>
-            <th>Duration</th>
-            <th>Amount Spent</th>
+          <TableHeadRow/>
         </TableHeader>
         );
 };
