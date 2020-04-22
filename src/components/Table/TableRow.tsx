@@ -53,8 +53,8 @@ const TableRow: React.FC<Props> = ({el}) => {
                 <TableSign>Day</TableSign>
             </td>
             <td>
-                <div>{moment(el.duration.startDate).format('MMM YY, YYYY ')}
-                -{moment(el.duration.endDate).format('MMM YY, YYYY ')}</div>
+                <div>{moment(el.duration.startDate).format('MMM DD, YYYY ')}
+                -{moment(el.duration.endDate).format('MMM DD, YYYY ')}</div>
                 <TableSign>{moment(el.duration.endDate).diff(moment(el.duration.startDate),'days')} days </TableSign>
             </td>
             <td>${el.amountSpent}</td>

@@ -4,16 +4,20 @@ import styled from "styled-components";
 export const TableHeaderRowStyle = styled.div`
     display: contents;
 `;
-const TableHeadRow = () => {
+
+interface Props {
+    column: any;
+}
+
+const TableHeadRow: React.FC<Props> = ({column}) => {
+    const tableColumn = column.map((el: any) =>
+        <th>
+            {el}
+        </th>
+    );
     return (
         <TableHeaderRowStyle>
-            <th>Campaign Name</th>
-            <th>Status</th>
-            <th>Results</th>
-            <th>Impression</th>
-            <th>Budget</th>
-            <th>Duration</th>
-            <th>Amount Spent</th>
+            {tableColumn}
         </TableHeaderRowStyle>
     );
 };

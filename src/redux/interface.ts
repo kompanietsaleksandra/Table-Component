@@ -5,7 +5,7 @@ export interface Duration {
 }
 
 export interface CampaignData {
-    campaignName: string;
+    campaignName: string | string[];
     status: boolean;
     results: number;
     impression: number;

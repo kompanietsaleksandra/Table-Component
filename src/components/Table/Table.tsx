@@ -39,7 +39,7 @@ const Table: React.FC<Props> = ({data}) => {
     return (
         <TableWrapper>
             <TableBody>
-                <TableHead/>
+                <TableHead column={["Campaign Name", "Status", "Results", "Impression", "Budget", "Duration", "Amount Spent"]}/>
                 {tableElements}
             </TableBody>
         </TableWrapper>

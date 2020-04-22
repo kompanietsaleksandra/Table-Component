@@ -1,143 +1,24 @@
 import {TableArray} from "./interface";
+import _ from "lodash";
 
-const data: TableArray = [
-    {
-        campaignName: 'Campaign1',
-        status: false,
-        results: 348777,
-        impression: 666887,
-        budget: 30,
+const data: TableArray = [];
+
+for (let i = 0; i < 10; i++ ) {
+    data.push({
+        campaignName: 'Campaign',
+        status: Math.random() >= 0.5,
+        results: _.random(0, 35000),
+        impression: _.random(0, 666666),
+        budget: _.random(0, 100),
         duration:
             {
-                startDate: new Date('2016-02-02'),
-                endDate: new Date('2016-03-02'),
-                
+                startDate: new Date(`2016-${_.random(1, 12)}-${_.random(1, 31)}`),
+                endDate: new Date(`2017-${_.random(1, 12)}-${_.random(1, 31)}`),
+
             },
-        amountSpent: 20
-    },
-    {
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 676876,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },
-    {
-        campaignName: 'Campaign2',
-        status: false,
-        results: 359756,
-        impression: 677436,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 16 2016',
-                
-            },
-        amountSpent: 220
-    },
-    {
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 675436,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },{
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 674566,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },
-    {
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 665376,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },{
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 664376,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },
-    {
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 632276,
-        budget: 68,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },{
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 668976,
-        budget: 98,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 11 2016',
-                
-            },
-        amountSpent: 220
-    },
-    {
-        campaignName: 'Campaign2',
-        status: true,
-        results: 359756,
-        impression: 643276,
-        budget: 58,
-        duration:
-            {
-                startDate: '9 10 2016',
-                endDate: '9 17 2016',
-                
-            },
-        amountSpent: 220
-    },
-];
+        amountSpent: _.random(0, 100)
+    });
+}
+
 
 export default data;
