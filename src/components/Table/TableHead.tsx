@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import TableHeadRow from "./TableHeadRow";
+import React from 'react';
+import styled from 'styled-components';
+import TableHeadRow from './TableHeadRow';
 
 const TableHeader = styled.tr`
     th{
@@ -15,13 +15,13 @@ const TableHeader = styled.tr`
 `;
 
 interface Props {
-    column: any;
+    columns: string[];
 }
 
-const TableHead: React.FC<Props> = () => {
+const TableHead: React.FC<Props> = ({columns}) => {
     return (
         <TableHeader>
-          <TableHeadRow column={["Campaign Name", "Status", "Results", "Impression", "Budget", "Duration", "Amount Spent"]}/>
+          <TableHeadRow columns={columns}/>
         </TableHeader>
         );
 };

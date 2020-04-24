@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import {TableHeaderRowStyle} from "./TableHeadRow";
-import {CampaignData} from "../../redux/interface";
+import React from 'react';
+import styled from 'styled-components';
+import {TableHeaderRowStyle} from './TableHeadRow';
+import {CampaignData} from '../../redux/types';
 import moment from 'moment';
+import _ from 'lodash';
 
 interface Props {
     data: CampaignData;
@@ -46,7 +47,6 @@ const TableRow: React.FC<Props> = ({el}) => {
             </td>
             <td>{el.results.toLocaleString()}
                 <TableSign>Clicks</TableSign>
-                <TableSign>{el.results.resultTitle}</TableSign>
             </td>
             <td>{el.impression.toLocaleString()}</td>
             <td>${el.budget}
@@ -54,8 +54,8 @@ const TableRow: React.FC<Props> = ({el}) => {
             </td>
             <td>
                 <div>{moment(el.duration.startDate).format('MMM DD, YYYY ')}
-                -{moment(el.duration.endDate).format('MMM DD, YYYY ')}</div>
-                <TableSign>{moment(el.duration.endDate).diff(moment(el.duration.startDate),'days')} days </TableSign>
+                -{moment(el.duration.endDate).add(_.random(0, 1000), 'days').format('MMM DD, YYYY ')}</div>
+                <TableSign>{moment(el.duration.endDate).add(_.random(0, 1000), 'days').diff(moment(el.duration.startDate),'days')} days </TableSign>
             </td>
             <td>${el.amountSpent}</td>
         </TableRowStyle>

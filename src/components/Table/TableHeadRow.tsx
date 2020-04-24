@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 export const TableHeaderRowStyle = styled.div`
     display: contents;
 `;
 
 interface Props {
-    column: any;
+    columns: string[];
 }
 
-const TableHeadRow: React.FC<Props> = ({column}) => {
-    const tableColumn = column.map((el: any) =>
-        <th>
+const TableHeadRow: React.FC<Props> = ({columns}) => {
+    const tableColumn = columns.map((el: any) =>
+        <th key={el}>
             {el}
         </th>
     );

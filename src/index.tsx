@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import styled from "styled-components";
+
+const AppStyle = styled.div`
+    text-align: center;
+    margin: 7px;
+`;
 
 ReactDOM.render(
   <React.StrictMode>
+      <AppStyle>
     <App />
+      </AppStyle>
   </React.StrictMode>,
   document.getElementById('root')
 );
