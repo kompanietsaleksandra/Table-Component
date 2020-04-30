@@ -1,13 +1,17 @@
 import React from 'react';
 import Table from './components/Table/Table';
-import { data } from './redux/state';
+import { getData } from './redux/state';
 
-const App = ({}) => {
-    return (
-        <React.Fragment>
-            <Table data={data}/>
-        </React.Fragment>
-    );
-};
+
+class App extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Table data={getData()}/>
+            </React.Fragment>
+        );
+    }
+}
 
 export default App;
+

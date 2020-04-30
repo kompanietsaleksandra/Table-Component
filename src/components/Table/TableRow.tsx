@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {TableHeaderRowStyle} from './TableHeadRow';
 import {CampaignData} from '../../redux/types';
 import moment from 'moment';
 import _ from 'lodash';
@@ -9,9 +8,7 @@ interface Props {
     data: CampaignData;
     el: any;
 }
-const TableRowStyle = styled(TableHeaderRowStyle)`
-     line-height: 24px
-`;
+
 const TableCampaign = styled.td`
      font-weight: bold;
 `;
@@ -33,12 +30,11 @@ const TableActive = styled.div<{ status: boolean }>`
 `;
 const TableSign = styled.div`
          font-size: 16px;
-         color: #333333;
-         opacity: 0.7;
+         color: #9E9E9E;
 `;
 const TableRow: React.FC<Props> = ({el}) => {
     return (
-        <TableRowStyle>
+        <React.Fragment>
             <TableCampaign>{el.campaignName}</TableCampaign>
             <td>
                 <TableActive status={el.status}>
@@ -54,12 +50,12 @@ const TableRow: React.FC<Props> = ({el}) => {
             </td>
             <td>
                 <div>{moment(el.duration.startDate).format('MMM DD, YYYY ')}
-                -{moment(el.duration.endDate).add(_.random(0, 1000), 'days').format('MMM DD, YYYY ')}</div>
+                    -{moment(el.duration.endDate).add(_.random(0, 1000), 'days').format('MMM DD, YYYY ')}</div>
                 <TableSign>{moment(el.duration.endDate).add(_.random(0, 1000), 'days').diff(moment(el.duration.startDate),'days')} days </TableSign>
             </td>
             <td>${el.amountSpent}</td>
-        </TableRowStyle>
+        </React.Fragment>
     );
-};
+}
 
 export default TableRow;

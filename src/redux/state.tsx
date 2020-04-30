@@ -1,24 +1,11 @@
 import {TableArray} from './types';
 import _ from 'lodash';
 
-export const data: TableArray = [];
-
-const campaignNameArr = [
-  'Campaign1',
-  'Campaign2',
-  'Campaign3',
-  'Campaign4',
-  'Campaign5',
-  'Campaign6',
-];
-
-function getRandomName(arr: string[]) {
-    return arr[_.random(0, arr.length - 1)];
-}
+const data: TableArray = [];
 
 for (let i = 0; i < 10; i++ ) {
     data.push({
-        campaignName: getRandomName(campaignNameArr),
+        campaignName: `Campaign ${_.random(0, 50)}`,
         status: !!_.random(0, 1),
         results: _.random(0, 35000),
         impression: _.random(0, 666666),
@@ -31,6 +18,12 @@ for (let i = 0; i < 10; i++ ) {
         amountSpent: _.random(0, 100)
     });
 }
+export function getData() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(() => {
+            resolve(data);
+            reject(new Error('Error'));
+        }, 1000);
+    });
+};
 
-
-// export default data;

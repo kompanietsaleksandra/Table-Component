@@ -3,11 +3,7 @@ import styled from 'styled-components';
 import TableHead from './TableHead';
 import TableRow from './TableRow';
 
-interface Props {
-    data: any;
-}
-
-const TableBody = styled.table`
+const TableBody = styled.tbody`
     width: 100%;
     border-collapse: collapse;
     font-size: 17px;
@@ -19,30 +15,57 @@ const TableBody = styled.table`
     }
 `;
 
-const TableWrapper = styled.div`
-     max-height: 700px;
-     overflow: auto;
+const TableWrapper = styled.table`
+     width: 100%;
      border: 3px solid rgba(107,89,86,0.39);
      border-radius: 10px;
+     border-collapse: collapse;
      padding: 0;
      box-shadow: 5px 10px 8px rgba(107,89,86,0.49);
 `;
 
-const Table: React.FC<Props> = ({data}) => {
-    const tableElements = data.map((el: any) =>
-        <tr key={el}>
-            <TableRow el={el} data={data} />
-        </tr>
-    );
+class Table extends React.Component<any, any> {
+    constructor(props: []) {
+        super(props);
+        this.state = {
+            dataArr: []
+        };
+    }
+    componentWillMount() {
+        let promise = this.props;
+        promise.data.then(
+            (response: any) => this.setState({ dataArr: response}),
+            (error: any) => alert(`Rejected: ${error}`)
+        );
 
-    return (
-        <TableWrapper>
-            <TableBody>
+    }
+    render() {
+        let tableElements;
+        if (this.state && this.state.dataArr.length !== 0){
+            const data: any = this.state.dataArr;
+            tableElements = data.map((el: []) =>
+                <tr key={el.toString()}>
+                    <TableRow el={el} data={data} />
+                </tr>
+            );
+        } else {
+            let data: any = [];
+            tableElements = data.map((el: []) =>
+                <tr key={el.toString()}>
+                    <TableRow el={el} data={data} />
+                </tr>
+            );
+        }
+
+        return (
+            <TableWrapper>
                 <TableHead columns={["Campaign Name", "Status", "Results", "Impression", "Budget", "Duration", "Amount Spent"]}/>
-                {tableElements}
-            </TableBody>
-        </TableWrapper>
-    );
-};
+                <TableBody>
+                    {tableElements}
+                </TableBody>
+            </TableWrapper>
+        );
+    }
+}
 
 export default Table;
