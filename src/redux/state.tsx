@@ -5,7 +5,8 @@ const data: TableArray = [];
 
 for (let i = 0; i < 10; i++ ) {
     data.push({
-        campaignName: `Campaign ${_.random(0, 50)}`,
+        id: i,
+        campaignName: `Campaign ${[i]}`,
         status: !!_.random(0, 1),
         results: _.random(0, 35000),
         impression: _.random(0, 666666),
@@ -25,5 +26,5 @@ export function getData() {
             reject(new Error('Error'));
         }, 1000);
     });
-};
+}
 

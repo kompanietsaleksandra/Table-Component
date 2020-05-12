@@ -1,13 +1,12 @@
 import React from 'react';
-import Table from './components/Table/Table';
 import { getData } from './redux/state';
-
+import DataLoader from "./components/Table/DataLoader";
 
 class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Table data={getData()}/>
+                <DataLoader data={getData()}/>
             </React.Fragment>
         );
     }

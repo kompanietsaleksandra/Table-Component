@@ -5,6 +5,7 @@ export interface Duration {
 }
 
 export interface CampaignData {
+    id: number;
     campaignName: string | number;
     status: boolean;
     results: number;

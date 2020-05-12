@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {CampaignData} from '../../redux/types';
 import moment from 'moment';
 import _ from 'lodash';
 
 interface Props {
-    data: CampaignData;
     el: any;
 }
 
@@ -56,6 +54,6 @@ const TableRow: React.FC<Props> = ({el}) => {
             <td>${el.amountSpent}</td>
         </React.Fragment>
     );
-}
+};
 
 export default TableRow;
