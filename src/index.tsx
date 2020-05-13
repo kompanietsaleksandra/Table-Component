@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import styled from "styled-components";
+import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components'
 
 const AppStyle = styled.div`
@@ -10,6 +10,8 @@ const AppStyle = styled.div`
     margin: 7px;
         max-height: 700px;
     overflow: auto;
+    border: 3px solid rgba(107,89,86,0.39);
+    border-radius: 10px;
 `;
 
 const GlobalStyle = createGlobalStyle`

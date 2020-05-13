@@ -14,4 +14,5 @@ export interface CampaignData {
     duration: Duration;
     amountSpent: number
 }
+
 export interface TableArray extends Array<CampaignData>{}

@@ -19,18 +19,18 @@ const TableHeader = styled.thead`
     width: calc(100% - 36px);
     height: 2px;
     left: 9px;
-    top: 92px;
+    top: 88px;
     }
 `;
 
 interface Props {
-    columns: string[];
+    dataHead: string[];
 }
 
-const TableHead: React.FC<Props> = ({columns}) => {
+const TableHead: React.FC<Props> = ({dataHead}) => {
     return (
         <TableHeader>
-          <TableHeadRow columns={columns}/>
+          <TableHeadRow dataHead={dataHead}/>
         </TableHeader>
         );
 };

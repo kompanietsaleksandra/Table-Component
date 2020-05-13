@@ -1,11 +1,11 @@
 import React from 'react';
 
 interface Props {
-    columns: string[];
+    dataHead: string[];
 }
 
-const TableHeadRow: React.FC<Props> = ({columns}) => {
-    const tableColumn = columns.map((el: any) =>
+const TableHeadRow: React.FC<Props> = ({dataHead}) => {
+    const tableColumn = dataHead.map((el: any) =>
         <th key={el.toString()}>
             {el}
         </th>

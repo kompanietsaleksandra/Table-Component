@@ -1,4 +1,4 @@
-import {TableArray} from './types';
+import { TableArray } from './types';
 import _ from 'lodash';
 
 const data: TableArray = [];
@@ -19,6 +19,13 @@ for (let i = 0; i < 10; i++ ) {
         amountSpent: _.random(0, 100)
     });
 }
+
+export const dataHead: string[] = [
+    "Campaign Name", "Status", "Results", "Impression", "Budget", "Duration", "Amount Spent"
+];
+
+
+
 export function getData() {
     return new Promise(function(resolve, reject) {
         setTimeout(() => {

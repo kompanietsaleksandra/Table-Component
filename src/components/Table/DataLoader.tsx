@@ -1,5 +1,6 @@
 import React from 'react';
-import Table from "./Table";
+import Table from './Table';
+import { dataHead } from '../../redux/state';
 
 class DataLoader extends React.Component<any, any> {
     constructor(props: []) {
@@ -16,9 +17,8 @@ class DataLoader extends React.Component<any, any> {
         );
     }
     render() {
-        return <Table data={this.state.dataArr} />
+        return <Table data={this.state.dataArr} dataHead={dataHead} />
     }
-
 }
 
 export default DataLoader;
