@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import TableHead from './TableHead';
 import TableRow from './TableRow';
 import { TableArray } from '../../redux/types';
-import { dataHead } from '../../redux/state';
 
 const TableBody = styled.tbody`
     width: 100%;
@@ -30,7 +29,7 @@ interface State {
 
 class Table extends React.Component<any, State> {
     render() {
-        const { data } = this.props;
+        const { data, dataHead } = this.props;
         const tableElements = data.map((el: any) =>
             <tr key={el.id}>
                 <TableRow el={el}  />
@@ -38,7 +37,7 @@ class Table extends React.Component<any, State> {
         );
         return (
             <TableWrapper>
-                <TableHead dataHead={dataHead}/>
+                <TableHead dataHead={dataHead} />
                 <TableBody>
                     {tableElements}
                 </TableBody>

@@ -23,6 +23,9 @@ for (let i = 0; i < 10; i++ ) {
 export const dataHead: string[] = [
     "Campaign Name", "Status", "Results", "Impression", "Budget", "Duration", "Amount Spent"
 ];
+export const dataHeadRus: string[] = [
+    "Название кампании", "Статус", "Результаты", "Показы", "Бюджет", "Продолжительность", "Потраченная сумма"
+];
 
 
 

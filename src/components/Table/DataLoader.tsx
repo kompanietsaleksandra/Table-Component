@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from './Table';
-import { dataHead } from '../../redux/state';
+import { dataHead, dataHeadRus } from '../../redux/state';
 
 class DataLoader extends React.Component<any, any> {
     constructor(props: []) {
@@ -17,7 +17,12 @@ class DataLoader extends React.Component<any, any> {
         );
     }
     render() {
-        return <Table data={this.state.dataArr} dataHead={dataHead} />
+        return (
+            <React.Fragment>
+                <Table data={this.state.dataArr} dataHead={dataHead} />
+                <Table data={this.state.dataArr} dataHead={dataHeadRus} />
+            </React.Fragment>
+            )
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {dataHead, getData} from './redux/state';
+import { dataHead, getData } from './redux/state';
 import DataLoader from './components/Table/DataLoader';
 
 class App extends React.Component {
