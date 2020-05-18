@@ -1,6 +1,5 @@
 import React from 'react';
 import Table from './Table';
-import { dataHead, dataHeadRus } from '../../redux/state';
 
 class DataLoader extends React.Component<any, any> {
     constructor(props: []) {
@@ -17,10 +16,12 @@ class DataLoader extends React.Component<any, any> {
         );
     }
     render() {
+        const tablesData = this.state.dataArr.map((el: any, i: number) =>
+            <Table key={i} data={el} />
+        );
         return (
             <React.Fragment>
-                <Table data={this.state.dataArr} dataHead={dataHead} />
-                <Table data={this.state.dataArr} dataHead={dataHeadRus} />
+                {tablesData}
             </React.Fragment>
             )
     }

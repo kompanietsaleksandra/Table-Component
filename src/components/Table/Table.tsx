@@ -29,8 +29,8 @@ interface State {
 
 class Table extends React.Component<any, State> {
     render() {
-        const { data, dataHead } = this.props;
-        const tableElements = data.map((el: any) =>
+        const { dataBody, dataHead } = this.props.data;
+        const tableElements = dataBody.map((el: any) =>
             <tr key={el.id}>
                 <TableRow el={el}  />
             </tr>
